@@ -16,6 +16,13 @@ describe('AppController (e2e)', () => {
   });
 
   it('/ (GET)', () => {
+    return request(app.getHttpServer()).get('/').expect(200).expect({
+      code: 200,
+      message: 'ok',
+    });
+  });
+
+  it('PST / (GET)', () => {
     return request(app.getHttpServer())
       .get('/')
       .expect(200)
